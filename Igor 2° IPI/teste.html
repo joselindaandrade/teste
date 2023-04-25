@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="csstt02.css">
+    <title>Cadastro</title>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FrontEnd_DOM_NICOLLE_JOSELINDA</title>
+        <style>
+            .lembrete {
+                margin: 40px 0;
+                align-items: center;
+            }
+
+            h1 {
+                color: rgb(23, 137, 230);
+                margin: 80px 0;
+            }
+
+            .centralizar {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .bt1 {
+                background-image: ;
+            }
+
+            .bt2 {
+                background-image: ;
+            }
+        </style>
+
+
+    </head>
+
+
+<body
+    
+background="https://www.pucsp.br/sites/default/files/curso_graduacao/jogos-digitais.jpg"
+
+
+    >
+
+
+
+
+    <div class="centralizar">
+
+        <div id="divPai">
+            <h1 style="font-size: 60px;"> PLAY GIRL</h1>
+            
+
+
+        </div>
+        <div><br>
+            <form name="frmCadastro" id="frmCadastro">
+                <input class="inpot" type="text" id="namee" nome="nome" value="" placeholder="Nome do jogo" size="32">
+                <button id="btcadastro" onclick="return validaForms();">Enviar</button>
+                </br>
+            </form>
+
+            <br>
+            <form name="frmCadastro" id="frmCdastro">
+                Player 1 <input type="text" style="font-size: 15px;" name="nome" placeholder="nick name" id="bt01">
+
+                <button class="bt1" type="reset"><img src="imgW.png" width="12" height="15"></button>
+
+                <button class="bt1" id="bt1" type="reset"><img src="imgWe.png" width="12" height="15"></button>
+
+
+                </br>
+        </div>
+
+
+        </form>
+        <br>
+        <form name="frmCadastro" id="frmCdastro">
+            <div>
+                Player 2 <input type="text" style="font-size: 15px" name="nome" placeholder="nick name" id="bt2">
+
+                <button type="reset"><img src="imgW.png" width="12" height="15"></button>
+
+                <button id="bt2" type="reset"><img src="imgWe.png" width="12" height="15"
+                        onclick="changeColor();"></button>
+
+                </br>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <script></script>
+
+    <form id="textForm">
+    
+        <label for="textInput">Add Text:</label>
+        <input type="text" id="textInput">
+        <button type="submit" id="addTextButton">Add Text</button>
+      </form>
+      <div id="textList"></div>
+      
+      <script>
+        var textForm = document.getElementById("textForm");
+        var textInput = document.getElementById("textInput");
+        var addTextButton = document.getElementById("addTextButton");
+        var textList = document.getElementById("textList");
+      
+        function addText(text) {
+          var listItem = document.createElement("li");
+          listItem.innerText = text;
+      
+          var editButton = document.createElement("button");
+          editButton.innerText = "Edit";
+          editButton.classList.add("editButton");
+          editButton.addEventListener("click", function() {
+            textInput.value = text; // set the input value to the current text
+            listItem.remove(); // remove the current text from the list
+            addTextButton.innerHTML = "Submit"; // change the button text to "Submit"
+          });
+      
+          var deleteButton = document.createElement("button");
+          deleteButton.innerText = "Delete";
+          deleteButton.classList.add("deleteButton");
+          deleteButton.addEventListener("click", function() {
+            listItem.remove();
+          });
+      
+          listItem.appendChild(editButton);
+          listItem.appendChild(deleteButton);
+          textList.appendChild(listItem);
+        }
+      
+        textForm.addEventListener("submit", function(event) {
+          event.preventDefault(); // prevent the default form submission behavior
+          var text = textInput.value;
+          addText(text); // call the addText function with the input text
+          textInput.value = ""; // clear the input field
+          addTextButton.innerHTML = "Add Text"; // change the button text back to "Add Text"
+        });
+
+</body>
+
+</html>
